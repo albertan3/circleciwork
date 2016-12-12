@@ -8,11 +8,11 @@ machine:
         ANDROID_HOME: /usr/local/android-sdk-linux
 
 dependencies:
-    pre:
-        - echo y | android update sdk --no-ui --all --filter build-tools-25.0.2
+    override:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-24.4.1,android-23,extra-google-m2repository
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
 test:
     override:
         - (./gradlew assemble):
-            timeout: 960
+            timeout: 360
