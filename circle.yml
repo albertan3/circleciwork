@@ -1,3 +1,4 @@
+
 general:
     artifacts:
         - /home/ubuntu/your-app-name/app/build/outputs/apk/
@@ -14,4 +15,4 @@ dependencies:
 test:
     override:
         - (./gradlew assemble):
-            timeout: 960
+            timeout: 360
